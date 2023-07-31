@@ -1,13 +1,18 @@
-import React from 'react';
-import TodoItem from './TodoItem';
+ import React from "react";
+import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, removeAllTodos }) => {
   return (
-    <div>
-      {todos.map(todo => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
-    </div>
+    <>
+      <div>
+        {todos.map((todo) => (
+          <React.Fragment key={todo.id}>
+            <TodoItem todo={todo} />
+          </React.Fragment>
+        ))}
+        
+      </div>
+    </>
   );
 };
 
